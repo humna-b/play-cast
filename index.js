@@ -34,15 +34,7 @@ app.get('/', (req, res) => {
   };
   res.send(`Server is running!<br>MongoDB status: <strong>${statusMap[state]}</strong>`);
 });
-fetch('https://play-cast-z4yq.onrender.com/api/sync-user', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    clerkId: 'user_3EXEn0yIEnrZY5JlhBfm50E5WwP',
-    email: 'humnabhatti22@gmail.com',
-    firstName: 'Humna'
-  })
-}).then(r => r.json()).then(console.log)
+
 // Routes
 app.use('/api', setRole);
 app.use('/api', tournament);
