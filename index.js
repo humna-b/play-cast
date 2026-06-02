@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
-
+import { syncUser } from './src/routes/syncUser.js'
 import connectDB from './src/Connection/DBconnect.js'; 
 
 import { clerkWebhook } from './src/routes/userRoute.js';
@@ -42,7 +42,7 @@ app.use('/api', registerCoach);
 app.use('/api', deepseek);
 app.use('/api', session);
 app.use('/api', clerkWebhook);
-
+app.use('/api', syncUser);
 // Local development server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
